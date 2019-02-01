@@ -206,6 +206,16 @@ class CalendarDay extends Component {
           this.props.highlightDateNumberStyle
         ];
       }
+    }else if (this.props.enabled && (this.props.date.isoWeekday() === 6 || this.props.date.isoWeekday() === 7)) {
+      // if weekend enable and is weekend change color day
+      dateNameStyle = [
+        styles.weekendDateName,
+        this.props.weekendDateNameStyle
+      ];
+      dateNumberStyle = [
+        styles.weekendDateNumber,
+        this.props.weekendDateNumberStyle
+      ];
     }
 
     let responsiveDateContainerStyle = {
