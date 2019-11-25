@@ -419,6 +419,13 @@ class CalendarStrip extends Component {
     }
   }
 
+  changeSelectedDate(selectedDate) {
+    this.setState({
+      selectedDate,
+      ...this.updateWeekData(this.state.startingDate, selectedDate)
+    });
+  }
+
   getDateMarking(day) {
     const { markedDates } = this.props
     if (markedDates.length === 0) {
